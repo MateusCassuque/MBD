@@ -2,14 +2,14 @@
 
 import { Lang, translations } from "@/hooks/translations"
 import { useState } from "react"
-import Navbar from "./Navbar"
-import Hero from "./Hero"
-import About from "./About"
-import Businesses from "./Businesses"
-import Footer from "./Footer"
-import ProductsPage from "./ProductsPage"
-import Services from "./Services"
-import Contact from "./Contact"
+import Navbar from "./components/landing/Navbar"
+import Hero from "./components/landing/Hero"
+import About from "./components/landing/About"
+import Businesses from "./components/landing/Businesses"
+import Footer from "./components/landing/Footer"
+import Services from "./components/landing/Services"
+import Contact from "./components/landing/Contact"
+import ProductsPage from "./components/ProductsPage"
 
 type Page = "home" | "products"
 

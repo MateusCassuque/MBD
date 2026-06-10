@@ -1,5 +1,5 @@
 import { T } from "@/hooks/translations"
-import { useReveal } from "../hooks/useReveal"
+import { useReveal } from "../../../hooks/useReveal"
 
 interface BusinessesProps { t: T; onViewProducts: () => void }
 

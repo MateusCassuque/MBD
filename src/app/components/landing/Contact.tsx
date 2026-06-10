@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useReveal } from "../hooks/useReveal";
+import { useReveal } from "../../../hooks/useReveal";
 import { T } from "@/hooks/translations";
 
 interface ContactProps { t: T }
