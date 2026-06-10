@@ -31,7 +31,7 @@ const PILLARS = [
   },
 ];
 
-export default function Hero({ t, onCatalogueClick }: HeroProps) {
+export function HeroPage({ t, onCatalogueClick }: HeroProps) {
   const [activePillar, setActivePillar] = useState(0);
   const [lineReady, setLineReady] = useState(false);
   const [scrollY, setScrollY] = useState(0);
