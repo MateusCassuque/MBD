@@ -47,7 +47,9 @@ export default function Navbar({ lang, setLang, t, page, setPage }: NavbarProps)
         <a
           href={'/#'}
         >
-          MBD<span className="text-[#f5f0e8] font-light"> Group</span>
+          {/* MBD<span className="text-[#f5f0e8] font-light"> Group</span> */}
+                    <img src="/placeholder.png" alt="MBD Logo" className="sm:w-15 sm:h-15 h-12 w-12" />
+
         </a>
       </button>
 

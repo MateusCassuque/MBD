@@ -67,7 +67,7 @@ export default function Contact({ t }: ContactProps) {
             onClick={() => setSent(true)}
             className="relative self-start inline-block px-10 py-3.5 bg-[#c9a84c] text-[#0a0a0a] text-[0.7rem] tracking-[0.2em] uppercase font-medium overflow-hidden group transition-all duration-300 border-none cursor-pointer"
           >
-            <span className="absolute inset-0 bg-[#e8c97a] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300" />
+            <span className="absolute inset-0 bg-[#e8c97a] -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
             <span className="relative z-10">{sent ? "✓" : t.ct.form.send}</span>
           </button>
         </div>

@@ -52,7 +52,7 @@ function BizCard({
       style={{ transitionDelay: `${index * 100}ms` }}
       onClick={onViewProducts}
     >
-      <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#c9a84c] to-transparent scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
+      <div className="absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-[#c9a84c] to-transparent scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
       <span className="absolute top-6 right-6 font-['Cormorant_Garamond'] text-[3.5rem] font-light text-[#c9a84c]/06 leading-none select-none">
         {String(index).padStart(2, "0")}
       </span>

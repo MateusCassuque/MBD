@@ -24,7 +24,7 @@ export default function About({ t }: AboutProps) {
                 {/* Outer offset border */}
                 <div className="absolute -top-6 -left-6 right-6 bottom-6 border border-[#c9a84c]/08" />
                 {/* Main box */}
-                <div className="absolute inset-0 border border-[#c9a84c]/18 bg-gradient-to-br from-[#c9a84c]/05 to-transparent" />
+                <div className="absolute inset-0 border border-[#c9a84c]/18 bg-linear-to-br from-[#c9a84c]/05 to-transparent" />
                 {/* Badge */}
                 <div className="absolute top-8 left-8 bg-[#c9a84c] text-[#0a0a0a] px-6 py-4 text-[0.65rem] tracking-[0.15em] uppercase font-semibold">
                     {t.about.badge}
