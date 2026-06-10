@@ -1,0 +1,28 @@
+'use client'
+
+import { useEffect } from 'react'
+import Pusher from 'pusher-js'
+import { useDeliveryStore } from '@/store/useDeliveryStore'
+import { IDelivery } from '@/types'
+
+export const useDeliveryRealtime = (storeId: string) => {
+    const { setDeliveries } = useDeliveryStore()
+
+    useEffect(() => {
+        const pusher = new Pusher(process.env.NEXT_PUBLIC_PUSHER_KEY!, {
+            cluster: process.env.NEXT_PUBLIC_PUSHER_CLUSTER!
+        })
+
+        const channel = pusher.subscribe(`store-${storeId}`)
+        channel.bind('delivery-update', (data: any) => {
+            setDeliveries((prev: any[]) =>
+                prev.map(d => d.id === data.deliveryId ? { ...d, status: data.status } : d)
+            )
+        })
+
+        return () => {
+            channel.unbind_all()
+            channel.unsubscribe()
+        }
+    }, [storeId, setDeliveries])
+}

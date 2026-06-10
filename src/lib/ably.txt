@@ -1,0 +1,34 @@
+import Ably from 'ably'
+
+export const ablyRealtimeClient = new Ably.Realtime({
+  key: process.env.NEXT_PUBLIC_ABLY_KEY!, // client-side usage (browser build will replace)
+  // note: in server code we use Ably.Rest (below)
+  echoMessages: false,
+})
+
+export const ablyRestClient = new Ably.Rest({
+  key: process.env.ABLY_API_KEY!, // server-only (keeps private)
+})
+
+// helper: rest publish
+export async function publishToUser(userId: string, event: string, payload: any) {
+  const channelName = `notifications:${userId}`
+  const channel = ablyRestClient.channels.get(channelName)
+  await new Promise<void>((resolve, reject) => {
+    // @ts-ignore
+    channel.publish(event, payload, (err) => (err ? reject(err) : resolve()))
+  })
+}
+
+// helper: check presence via REST (returns number of present members)
+export async function getPresenceCount(userId: string): Promise<number> {
+  const channelName = `notifications:${userId}`
+  const channel = ablyRestClient.channels.get(channelName)
+  return new Promise<number>((resolve, reject) => {
+    // @ts-ignore
+    channel.presence.get((err: any, members: any[]) => {
+      if (err) return reject(err)
+      resolve(Array.isArray(members) ? members.length : 0)
+    })
+  })
+}
