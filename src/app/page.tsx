@@ -9,6 +9,7 @@ import { Services } from "./components/home/Services"
 import { Contact } from "./components/home/Contact"
 import { Footer } from "./components/home/Footer"
 import { ProductsPage } from "./components/ProductsPage"
+import { HeroPage } from "./components/home/Hero"
 
 type Page = "home" | "products"
 
@@ -31,7 +32,7 @@ export default function Home() {
 
             {page === "home" ? (
                 <>
-                    {/* <HeroPage t={t} onCatalogueClick={() => setPage("products")} /> */}
+                    <HeroPage t={t} onCatalogueClick={() => setPage("products")} />
                     <Divider />
                     <About t={t} />
                     <Divider />
