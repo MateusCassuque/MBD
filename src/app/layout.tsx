@@ -3,14 +3,12 @@ import { ThemeProvider } from "next-themes"
 import MySessionProvider from "@/provider/session"
 import { Toaster } from "sonner"
 import { EasterEggs } from "@/components/layout/OnUse/EasterEggs"
-import Navbar from "./components/navbar"
-import Footer from "./components/footer"
 import { Phone } from "lucide-react"
 
 
 export const metadata = {
-  title: '3M Visa',
-  description: 'Site Oficial da 3M Visa',
+  title: 'MBD',
+  description: 'Site Oficial da MBD',
 }
 
 
