@@ -2,13 +2,12 @@
 
 import { Lang, translations } from "@/hooks/translations"
 import { useState } from "react"
-import Navbar from "./components/landing/Navbar"
-import { HeroPage } from "./components/landing/Hero"
-import { About } from "./components/landing/About"
-import { Businesses } from "./components/landing/Businesses"
-import { Services } from "./components/landing/Services"
-import { Contact } from "./components/landing/Contact"
-import { Footer } from "./components/landing/Footer"
+import Navbar from "./components/home/Navbar"
+import { About } from "./components/home/About"
+import { Businesses } from "./components/home/Businesses"
+import { Services } from "./components/home/Services"
+import { Contact } from "./components/home/Contact"
+import { Footer } from "./components/home/Footer"
 import { ProductsPage } from "./components/ProductsPage"
 
 type Page = "home" | "products"
@@ -19,7 +18,7 @@ function Divider() {
     )
 }
 
-export default function HomePage() {
+export default function Home() {
     const [lang, setLang] = useState<Lang>("pt")
     const [page, setPage] = useState<Page>("home")
     const t = translations[lang]
@@ -32,7 +31,7 @@ export default function HomePage() {
 
             {page === "home" ? (
                 <>
-                    <HeroPage t={t} onCatalogueClick={() => setPage("products")} />
+                    {/* <HeroPage t={t} onCatalogueClick={() => setPage("products")} /> */}
                     <Divider />
                     <About t={t} />
                     <Divider />
