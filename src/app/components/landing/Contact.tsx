@@ -16,7 +16,7 @@ export default function Contact({ t }: ContactProps) {
   const infoItems = [
     { label: t.ct.info.address, value: t.ct.info.addressVal },
     { label: t.ct.info.email, value: "geral@grupombd.com" },
-    { label: t.ct.info.phone, value: "+351 000 000 000" },
+    { label: t.ct.info.phone, value: "+244 947 573 578" },
     { label: t.ct.info.hours, value: t.ct.info.hoursVal },
   ];
 

@@ -29,7 +29,7 @@ export default function Footer({ t, lang, onCatalogueClick }: FooterProps) {
         </li>
       </ul>
       <p className="text-[#888] text-[0.65rem] tracking-widest">
-        © 2026 3M, Todos os direitos reservados ao Grupo MBD. {t.footer.rights}
+        © 2026 3M, Powerd by Grupo MBD. {t.footer.rights}
       </p>
     </footer>
   );
