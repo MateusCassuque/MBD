@@ -30,8 +30,8 @@ export default function About({ t }: AboutProps) {
                     {t.about.badge}
                 </div>
                 {/* Ghost text */}
-                <div className="absolute left-9 sm:left-20 top-25 font-['Cormorant_Garamond'] sm:text-[8rem] text-[7rem] font-light text-[#c9a84c]/08 leading-none select-none">
-                    MBD
+                <div className="absolute sm:top-13 top-25 left-20 sm:left-30 font-['Cormorant_Garamond'] sm:text-[8rem] text-[7rem] font-light text-[#c9a84c]/08 leading-none select-none">
+                    <img src="/images/oficialLogo.png" alt="MBD Logo" className="sm:w-56 sm:h-56 h-40 w-40" />
                 </div>
                 {/* Stats grid */}
                 <div className="absolute bottom-0 left-0 right-0 grid grid-cols-2 gap-px">
