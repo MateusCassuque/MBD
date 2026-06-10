@@ -8,7 +8,7 @@ export const Footer: React.FC<FooterProps> = ({ t, lang, onCatalogueClick }) => 
   return (
     <footer className="bg-[#111111] border-t border-[#c9a84c]/18 px-[8%] py-12 flex flex-wrap items-center justify-between gap-4">
       <div className="font-['Cormorant_Garamond'] text-[1.5rem] font-semibold text-[#c9a84c]">
-        MBD<span className="text-[#f5f0e8] font-light"> Group</span>
+        MBD <span className="text-[#f5f0e8] font-light"> Group</span>
       </div>
       <ul className="flex gap-8 list-none flex-wrap">
         {[
