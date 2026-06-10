@@ -2,7 +2,7 @@ import { Lang, T } from "@/hooks/translations";
 
 interface FooterProps { lang: Lang; t: T; onCatalogueClick: () => void }
 
-export default function Footer({ t, lang, onCatalogueClick }: FooterProps) {
+export const Footer: React.FC<FooterProps> = ({ t, lang, onCatalogueClick }) => {
   const catalogueLabel = { pt: "Catálogo", en: "Catalogue", fr: "Catalogue" }[lang];
 
   return (

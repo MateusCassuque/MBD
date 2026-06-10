@@ -10,7 +10,7 @@ const stats = (t: T) => [
     { num: "24h", label: t.about.stat.service },
 ]
 
-export default function About({ t }: AboutProps) {
+export const About: React.FC<AboutProps> = ({ t }) => {
     const left = useReveal()
     const right = useReveal()
 

@@ -29,7 +29,7 @@ const DEFAULT_FILTERS: Filters = {
   sort: "default",
 }
 
-export default function ProductsPage({ lang }: Props) {
+export const ProductsPage: React.FC<Props> = ({ lang }) => {
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS)
   const [search, setSearch] = useState("")
   const [selected, setSelected] = useState<Product | null>(null)
@@ -95,7 +95,7 @@ export default function ProductsPage({ lang }: Props) {
         </div>
       </div>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-[#c9a84c]/20 to-transparent" />
+      <div className="h-px bg-linear-to-r from-transparent via-[#c9a84c]/20 to-transparent" />
 
       {/* Toolbar */}
       <div className="sticky top-0 z-40 bg-[#0d0d0d]/95 backdrop-blur border-b border-[#c9a84c]/10 px-[6%] py-3 flex items-center gap-4">
@@ -151,7 +151,7 @@ export default function ProductsPage({ lang }: Props) {
             </button>
             <ProductsSidebar
               filters={filters}
-              setFilters={(f) => { setFilters(f) ;setSidebarOpen(false) }}
+              setFilters={(f) => { setFilters(f); setSidebarOpen(false) }}
               lang={lang}
               totalCount={filtered.length}
             />

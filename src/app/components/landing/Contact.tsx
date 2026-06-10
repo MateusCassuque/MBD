@@ -4,7 +4,7 @@ import { T } from "@/hooks/translations";
 
 interface ContactProps { t: T }
 
-export default function Contact({ t }: ContactProps) {
+export const Contact: React.FC<ContactProps> = ({ t }) => {
   const header = useReveal();
   const formRef = useReveal();
   const infoRef = useReveal();

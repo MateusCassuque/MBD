@@ -31,7 +31,7 @@ const PILLARS = [
   },
 ];
 
-export function HeroPage({ t, onCatalogueClick }: HeroProps) {
+export const HeroPage: React.FC<HeroProps> = ({ t, onCatalogueClick }) => {
   const [activePillar, setActivePillar] = useState(0);
   const [lineReady, setLineReady] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -57,12 +57,12 @@ export function HeroPage({ t, onCatalogueClick }: HeroProps) {
   }, []);
 
   const lang = (t.hero.tag === "Grupo de Referência") ? "pt"
-             : (t.hero.tag === "Reference Group")     ? "en"
-             : "fr";
+    : (t.hero.tag === "Reference Group") ? "en"
+      : "fr";
 
   const pillar = PILLARS[activePillar];
-  const pillarKey   = lang === "pt" ? pillar.keyPt   : lang === "en" ? pillar.keyEn   : pillar.keyFr;
-  const pillarDesc  = lang === "pt" ? pillar.descPt  : lang === "en" ? pillar.descEn  : pillar.descFr;
+  const pillarKey = lang === "pt" ? pillar.keyPt : lang === "en" ? pillar.keyEn : pillar.keyFr;
+  const pillarDesc = lang === "pt" ? pillar.descPt : lang === "en" ? pillar.descEn : pillar.descFr;
   const scrollLabel = { pt: "Explorar", en: "Explore", fr: "Explorer" }[lang];
 
   return (
@@ -86,11 +86,11 @@ export function HeroPage({ t, onCatalogueClick }: HeroProps) {
 
       {/* ── GRADIENT OVERLAYS ── */}
       {/* Left dark vignette — keeps text readable */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#080808]/95 via-[#080808]/70 to-transparent" />
+      <div className="absolute inset-0 z-1 bg-linear-to-r from-[#080808]/95 via-[#080808]/70 to-transparent" />
       {/* Bottom fade to site bg */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 z-[2] bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 z-2 bg-linear-to-t from-[#0a0a0a] to-transparent" />
       {/* Subtle gold radial behind text */}
-      <div className="absolute top-[30%] left-[8%] w-[500px] h-[500px] z-[1] rounded-full"
+      <div className="absolute top-[30%] left-[8%] w-125 h-125 z-1 rounded-full"
         style={{ background: "radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 70%)" }} />
 
       {/* ── CONTENT WRAPPER ── */}
@@ -105,14 +105,14 @@ export function HeroPage({ t, onCatalogueClick }: HeroProps) {
             style={{ animation: "fadeUp 0.8s 0.2s both" }}
           >
             <span
-              className="inline-block h-px bg-[#c9a84c] transition-all duration-[1200ms] ease-out"
+              className="inline-block h-px bg-[#c9a84c] transition-all duration-1200 ease-out"
               style={{ width: lineReady ? "2.5rem" : "0", marginRight: lineReady ? "1rem" : "0" }}
             />
             <span className="text-[0.6rem] tracking-[0.4em] uppercase text-[#c9a84c] whitespace-nowrap">
               {t.hero.tag}
             </span>
             <span
-              className="inline-block h-px bg-[#c9a84c]/30 ml-4 transition-all duration-[1800ms] ease-out delay-300"
+              className="inline-block h-px bg-[#c9a84c]/30 ml-4 transition-all duration-1800 ease-out delay-300"
               style={{ width: lineReady ? "100px" : "0" }}
             />
           </div>
@@ -141,7 +141,7 @@ export function HeroPage({ t, onCatalogueClick }: HeroProps) {
 
           {/* Thin horizontal rule — editorial signature */}
           <div
-            className="h-px mb-8 transition-all duration-[1400ms] ease-out"
+            className="h-px mb-8 transition-all duration-1400 ease-out"
             style={{
               width: lineReady ? "min(420px, 80%)" : "0",
               background: "linear-gradient(to right, rgba(201,168,76,0.6), transparent)",
@@ -151,7 +151,7 @@ export function HeroPage({ t, onCatalogueClick }: HeroProps) {
 
           {/* Description */}
           <p
-            className="max-w-[440px] text-[0.86rem] leading-[1.95] text-[#f5f0e8]/55 mb-12"
+            className="max-w-110 text-[0.86rem] leading-[1.95] text-[#f5f0e8]/55 mb-12"
             style={{ animation: "fadeUp 1s 0.9s both" }}
           >
             {t.hero.desc}
@@ -177,7 +177,7 @@ export function HeroPage({ t, onCatalogueClick }: HeroProps) {
                 fontFamily: "'Montserrat', sans-serif",
               }}
             >
-              <span className="absolute inset-0 bg-[#e8c97a] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300" />
+              <span className="absolute inset-0 bg-[#e8c97a] -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
               <span className="relative z-10">{t.hero.cta1}</span>
             </button>
 
@@ -243,7 +243,7 @@ export function HeroPage({ t, onCatalogueClick }: HeroProps) {
         <div className="hidden lg:flex flex-col justify-center pr-[5%] pl-8 w-[42%] gap-3">
           {PILLARS.map((p, i) => {
             const isActive = activePillar === i;
-            const key  = lang === "pt" ? p.keyPt  : lang === "en" ? p.keyEn  : p.keyFr;
+            const key = lang === "pt" ? p.keyPt : lang === "en" ? p.keyEn : p.keyFr;
             const desc = lang === "pt" ? p.descPt : lang === "en" ? p.descEn : p.descFr;
 
             return (

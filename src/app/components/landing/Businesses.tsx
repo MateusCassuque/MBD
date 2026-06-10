@@ -3,7 +3,7 @@ import { useReveal } from "../../../hooks/useReveal"
 
 interface BusinessesProps { t: T; onViewProducts: () => void }
 
-export default function Businesses({ t, onViewProducts }: BusinessesProps) {
+export const Businesses: React.FC<BusinessesProps> = ({ t, onViewProducts }) => {
   const header = useReveal()
 
   return (

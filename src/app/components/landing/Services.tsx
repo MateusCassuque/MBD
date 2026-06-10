@@ -4,7 +4,7 @@ import { T } from "@/hooks/translations"
 
 interface ServicesProps { t: T }
 
-export default function Services({ t }: ServicesProps) {
+export const Services: React.FC<ServicesProps> = ({ t }) => {
   const left = useReveal()
   const right = useReveal()
   const [hovered, setHovered] = useState<number | null>(null)
